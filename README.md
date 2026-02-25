@@ -28,6 +28,8 @@ Start here:
 - Proof/demo: `https://github.com/Qwayk/start-here/blob/main/PROOF.md`
 - Tool catalog (what exists today): `TOOLS.md`
 
+If you’re thinking “ok but what am I paying for?” — open `TOOLS.md` first.
+
 ## Membership (what you get)
 
 We sell membership via GitHub Sponsors:
@@ -40,6 +42,10 @@ Members repo includes:
 - onboarding that’s actually usable (`START_HERE.md`)
 - workflow packs (the “do this outcome” playbooks)
 - updates and early drops
+
+If you’re a vibe coder:
+- you can treat the workflow packs like “copy/paste recipes”.
+- run dry-run first, then apply only when it looks right.
 
 ## Support boundary (important, so we don’t waste each other’s time)
 
