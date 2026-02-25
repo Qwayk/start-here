@@ -1,29 +1,21 @@
-# Public front-door repo README template
-
 Last updated: **2026-02-25**
-
-This is the README for the public “front door” repository in the new GitHub org.
-
-Replace placeholders:
-- `Qwayk`
-- `https://qwayk.com/get-access/`
-- `qwayk-tools`
-- `https://qwayk.com/trust/`
-- `[THIS_REPO_URL]`
-- `https://qwayk.com/tools/` (this monorepo: `shai347/api-tools-for-ai-agents` or whatever becomes canonical)
-
----
 
 # Safe-by-default API tools for AI agents
 
-This repo is the **front door** for a library of API tools designed for AI agents and automation.
+This repo is the public **start here** for a library of safe-by-default API tools designed for AI agents and automation.
 
-Core principle: safety-first defaults
-- **Dry-run by default**
+## Safety model (why this is different)
+
+- **Dry-run by default** (you see the plan first)
 - Writes require explicit **apply**
+- We use **read-back verification**
 - We produce **receipts/audit logs** so changes are verifiable
 
-Proof/demo (start here): `https://qwayk.com/trust/`
+Proof/demo:
+- `https://github.com/Qwayk/start-here/blob/main/PROOF.md`
+
+Tools source (monorepo):
+- `https://github.com/shai347/api-tools-for-ai-agents`
 
 ## What you can do with these tools
 
@@ -32,13 +24,11 @@ Examples:
 - run marketing/analytics reads safely (ad + analytics APIs)
 - manage infra/vendor accounts safely (cloud + status + registrar APIs)
 
-The tools live here: `https://qwayk.com/tools/`
-
-## Get access (membership)
+## Membership (how to get the private members repo)
 
 We sell membership via GitHub Sponsors:
-- Sponsors page: `https://qwayk.com/get-access/`
-- Members get access to the private members repo: `Qwayk/qwayk-tools`
+- Sponsors page: `https://github.com/sponsors/Qwayk`
+- Members get access to the private members repo: `Qwayk/qwayk-tools` (private)
 
 Members repo includes:
 - self-serve onboarding (`START_HERE.md`)
@@ -53,8 +43,8 @@ This is built to be self-serve:
 - No SLAs
 - Don’t paste secrets into Issues/Discussions
 
-## Contributing / open source
+## Where to start
 
-Some parts may be open source; some “workflow packs” may be sponsor-only.
-If you want to support the work, sponsor here: `https://qwayk.com/get-access/`.
-
+1) Read the proof/demo link above.
+2) If you sponsor, accept the GitHub invite to the members repo.
+3) Start at `START_HERE.md` inside the members repo.
