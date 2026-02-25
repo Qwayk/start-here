@@ -13,7 +13,7 @@ That’s cool, but it’s also how you end up with:
 So I built everything around one rule:
 **you see the plan first, and nothing writes unless you explicitly apply.**
 
-## The safety flow (what you should expect)
+## The safety flow
 
 1) **Dry-run**: the tool prints a plan of what it *would* do.
 2) **You review**: if the plan looks wrong, you stop.
@@ -21,7 +21,7 @@ So I built everything around one rule:
 4) **Verify**: the tool reads back the API and confirms the new state.
 5) **Receipt**: you get a small artifact you can save for auditing.
 
-## A tiny example (fake data, real pattern)
+## A tiny example
 
 Dry-run might say:
 - “I’m going to update `example.com` DNS A record from `1.2.3.4` to `5.6.7.8`.”
