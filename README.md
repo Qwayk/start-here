@@ -6,7 +6,7 @@ If you want an AI agent to do real actions for you through APIs, but you don’t
 
 I’m building a library of small tools that are designed for **safe automation**.
 
-## The idea (simple)
+## The idea
 
 Most “agent demos” skip the boring part: safety.
 
@@ -16,13 +16,13 @@ Here’s the rule I follow:
 3) verify what happened with read-back
 4) write a receipt so you can audit it later
 
-## What you can do (examples)
+## What you can do
 
 - publish and update content safely (Ghost and WordPress)
 - pull marketing and analytics data without guessing (Plausible and Ads APIs)
 - manage infrastructure and vendor accounts carefully (Cloudflare, Statuspage, Dynadot)
 
-## Proof + tools list
+## Proof and tools list
 
 Start here:
 - Proof/demo: `https://github.com/Qwayk/start-here/blob/main/PROOF.md`
@@ -30,7 +30,7 @@ Start here:
 
 If you’re thinking “ok but what am I paying for?” open `TOOLS.md` first.
 
-## Membership (what you get)
+## Membership
 
 We sell membership via GitHub Sponsors:
 - Sponsors page: `https://github.com/sponsors/Qwayk`
@@ -47,7 +47,7 @@ If you’re a vibe coder:
 - you can treat the workflow packs like “copy/paste recipes”.
 - run dry-run first, then apply only when it looks right.
 
-## Support boundary (important)
+## Support boundary
 
 This is built to be self-serve:
 - No custom setup
