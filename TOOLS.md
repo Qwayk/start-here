@@ -23,6 +23,26 @@ Two important notes:
 - Some tools are read-only. Some can do writes.
 - Anything that writes is gated. Dry-run first. Apply only when it looks right.
 
+## Quick scan
+
+| Tool | Best for | Writes |
+|---|---|---|
+| WordPress | publishing and editing content | yes, gated |
+| Ghost | Ghost admin workflows | yes, gated |
+| Freepik | finding and downloading assets | downloads gated |
+| Unsplash | photo search | tracking gated |
+| Plausible Analytics | website analytics | events gated |
+| Google Ads | ads performance reads | depends |
+| Meta Ads | ads performance reads | no, read-only |
+| Cloudflare | DNS and zone changes | yes, gated |
+| Atlassian Statuspage | incidents and components | yes, gated |
+| Dynadot | domain inventory and registrar ops | yes, gated |
+| Instantly | campaigns and lead ops | yes, gated |
+| Mercury | money ops reads | depends |
+| Amazon Product Advertising API v5 | product lookups | no, read-only |
+| Pinterest | read-only data pulls | no, read-only |
+| YouTube | read-only data pulls | depends |
+
 ## The lineup
 
 ### WordPress
@@ -104,7 +124,7 @@ Examples:
 - pull campaign/ad set/ad performance metrics
 - export data for reporting
 
-Writes: no (read-only).
+Writes: no. Read-only.
 
 ### Cloudflare
 
@@ -117,7 +137,7 @@ Examples:
 
 Writes: yes, but gated.
 
-### Statuspage
+### Atlassian Statuspage
 
 Uses the Statuspage API.
 
