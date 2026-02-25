@@ -1,30 +1,34 @@
 Last updated: **2026-02-25**
 
-# Safe-by-default API tools for AI agents
+# Qwayk — safe-by-default API tools for AI agents
 
-This repo is the public **start here** for a library of safe-by-default API tools designed for AI agents and automation.
+If you want an AI agent to do real actions for you (through APIs), but you don’t want it to “just do things” and break stuff, this is for you.
 
-## Safety model (why this is different)
+I’m building a library of small tools that are designed for **safe automation**.
 
-- **Dry-run by default** (you see the plan first)
-- Writes require explicit **apply**
-- We use **read-back verification**
-- We produce **receipts/audit logs** so changes are verifiable
+## The idea (simple)
 
-Proof/demo:
-- `https://github.com/Qwayk/start-here/blob/main/PROOF.md`
+Most “agent demos” skip the boring part: safety.
 
-Browse tools under the Qwayk GitHub organization:
-- `https://github.com/Qwayk?tab=repositories`
+Here’s the rule I follow:
+1) show you the plan first (dry-run)
+2) only do the write when you explicitly say apply
+3) verify what happened (read-back)
+4) write a receipt so you can audit it later
 
-## What you can do with these tools
+## What you can do (examples)
 
-Examples:
-- publish/update content safely (CMS APIs)
-- run marketing/analytics reads safely (ad + analytics APIs)
-- manage infra/vendor accounts safely (cloud + status + registrar APIs)
+- publish/update content safely (Ghost / WordPress)
+- pull marketing/analytics data without guessing (Plausible / Ads APIs)
+- manage infrastructure/vendor accounts carefully (Cloudflare / Statuspage / Dynadot)
 
-## Membership (how to get the private members repo)
+## Proof + tools list
+
+Start here:
+- Proof/demo: `https://github.com/Qwayk/start-here/blob/main/PROOF.md`
+- Tool catalog (what exists today): `TOOLS.md`
+
+## Membership (what you get)
 
 We sell membership via GitHub Sponsors:
 - Sponsors page: `https://github.com/sponsors/Qwayk`
@@ -33,12 +37,11 @@ We sell membership via GitHub Sponsors:
 If the Sponsors page isn’t live yet, we’re likely in the approval/onboarding flow.
 
 Members repo includes:
-- self-serve onboarding (`START_HERE.md`)
-- workflow packs
-- updates/releases
-- strict support boundaries (docs-first; no custom setup by default)
+- onboarding that’s actually usable (`START_HERE.md`)
+- workflow packs (the “do this outcome” playbooks)
+- updates and early drops
 
-## Support boundary (important)
+## Support boundary (important, so we don’t waste each other’s time)
 
 This is built to be self-serve:
 - No custom setup
@@ -47,6 +50,6 @@ This is built to be self-serve:
 
 ## Where to start
 
-1) Read the proof/demo link above.
-2) If you sponsor, accept the GitHub invite to the members repo.
-3) Start at `START_HERE.md` inside the members repo.
+1) Read `PROOF.md`.
+2) Skim `TOOLS.md` (it tells you what exists and what’s coming).
+3) If it matches what you want, sponsor and accept the GitHub invite.
