@@ -4,7 +4,7 @@ Last updated: **2026-02-25**
 
 Quick note:
 - This page is public so you can see what you’re paying for before you sponsor.
-- I’m publishing tools into the `Qwayk` org repo-by-repo. Some are already there, some are “next up”.
+- I’m publishing tools into the `Qwayk` org repo-by-repo. Right now you’re looking at the catalog; the per-tool repos are the next step.
 
 ## How these tools work (in normal words)
 
@@ -21,7 +21,7 @@ They just call the same APIs you’d call manually, but with guardrails:
 ## Current lineup (what I’ve built so far)
 
 Content + publishing:
-- WordPress — read/update posts, pages, media, and more through the WP REST API (safe-by-default).
+- WordPress — read/update posts, pages, media, and more through the WordPress REST API (safe-by-default).
 - Ghost — safe admin workflows for Ghost sites (dry-run → apply → verify).
 
 Assets:
@@ -49,6 +49,12 @@ Money ops:
 Affiliate/product data:
 - Amazon PA-API v5 — product lookups (read-only).
 
+Social:
+- Pinterest — read-only v1 (safe browsing of Pinterest data; no posting).
+
+Video:
+- YouTube — safe CLI patterns for YouTube-related workflows (where supported).
+
 ## What members get (so it’s worth paying)
 
 Members repo: `Qwayk/qwayk-tools` (private)
@@ -57,6 +63,9 @@ You get:
 - onboarding that’s actually usable (not “read docs for 2 hours”)
 - workflow packs (“do this outcome” playbooks)
 - release notes and early drops
+
+Also:
+- when a tool is published as its own repo under the Qwayk org, members get the update first (and the workflow pack stays consistent).
 
 You don’t get:
 - custom setup
@@ -70,4 +79,3 @@ This list will keep growing.
 If there’s a specific API you want next, open an issue in the public repo and tell me:
 - what outcome you want
 - what the “safe dry-run plan” should look like
-
