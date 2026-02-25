@@ -14,8 +14,8 @@ This repo is the public **start here** for a library of safe-by-default API tool
 Proof/demo:
 - `https://github.com/Qwayk/start-here/blob/main/PROOF.md`
 
-Tools source (monorepo):
-- `https://github.com/shai347/api-tools-for-ai-agents`
+Browse tools under the Qwayk GitHub organization:
+- `https://github.com/Qwayk?tab=repositories`
 
 ## What you can do with these tools
 
