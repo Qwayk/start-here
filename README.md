@@ -30,6 +30,8 @@ We sell membership via GitHub Sponsors:
 - Sponsors page: `https://github.com/sponsors/Qwayk`
 - Members get access to the private members repo: `Qwayk/qwayk-tools` (private)
 
+If the Sponsors page isn’t live yet, we’re likely in the approval/onboarding flow.
+
 Members repo includes:
 - self-serve onboarding (`START_HERE.md`)
 - workflow packs
