@@ -1,37 +1,54 @@
 Last updated: **2026-02-25**
 
-# Proof / demo — safety model in action
+# Proof — what “safe-by-default” means here
 
-This is a lightweight proof artifact for the “safe-by-default” model.
+Ok so… a lot of agent stuff online is “look, it did the thing”.
 
-Goal: show (truthfully) what someone should expect:
+That’s cool, but it’s also how you end up with:
+- the wrong DNS record
+- a deleted campaign
+- a broken post/page
+- a mess you can’t undo
 
-1) Dry-run produces a deterministic plan
-2) Apply requires explicit flags
-3) Results are verified via read-back
-4) A receipt artifact is produced for auditing
+So I built everything around one rule:
+**you see the plan first, and nothing writes unless you explicitly apply.**
 
-## Demo (what to include)
+## The safety flow (what you should expect)
 
-- 3 screenshots (or short terminal snippets):
-  - a dry-run plan
-  - the apply command (with flags)
-  - the read-back verification output
-- Link to a receipt artifact (or a sanitized sample)
+1) **Dry-run**: the tool prints a plan of what it *would* do.
+2) **You review**: if the plan looks wrong, you stop.
+3) **Apply**: you run the same command with `--apply` (and sometimes `--yes`).
+4) **Verify**: the tool reads back the API and confirms the new state.
+5) **Receipt**: you get a small artifact you can save for auditing.
+
+## A tiny example (fake data, real pattern)
+
+Dry-run might say:
+- “I’m going to update `example.com` DNS A record from `1.2.3.4` to `5.6.7.8`.”
+
+Apply is explicit:
+- same command + `--apply`
+
+Verify might say:
+- “Read-back confirms A record is now `5.6.7.8`.”
+
+Receipt might include:
+- timestamp
+- what you changed
+- what was verified
 
 ## What this is / isn’t
 
-Is:
-- CLI tools + workflow packs designed for safe automation via APIs
-- self-serve documentation and repeatable patterns
+This is:
+- tools + workflow packs for safe automation through APIs
+- self-serve by default
 
-Isn’t:
-- an agent that holds your credentials
+This isn’t:
+- a bot that holds your credentials
 - a done-for-you service
-- an SLA-backed support plan
+- “trust me bro” automation
 
 ## Get access
 
 - Sponsors: `https://github.com/sponsors/Qwayk`
 - Public start here: `https://github.com/Qwayk/start-here`
-
