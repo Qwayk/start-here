@@ -4,58 +4,63 @@ Last updated: **2026-02-25**
 
 Quick note:
 - This page is public so you can see what you’re paying for before you sponsor.
-- I’m publishing tools into the `Qwayk` org repo-by-repo. Right now you’re looking at the catalog; the per-tool repos are the next step.
+- Some tools are already published as repos under the `Qwayk` org. Some are still being migrated.
+- Either way, this page tells you what exists in the library.
 
-## How these tools work (in normal words)
+## How these tools work
 
 You run everything locally.
 
 The tools don’t “take over your account”.
-They just call the same APIs you’d call manually, but with guardrails:
+They just call the same APIs you’d call manually, but with guardrails.
 
-1) Dry-run shows the plan.
-2) Apply is a separate step.
-3) We verify via read-back.
-4) You get a receipt (so you can prove what changed).
+You’ll usually see this flow:
+1) Dry-run shows the plan
+2) Apply is a separate step
+3) The tool verifies what happened
+4) You get a receipt you can keep
 
-## Current lineup (what I’ve built so far)
+## Current lineup
 
-Content + publishing:
-- WordPress — read/update posts, pages, media, and more through the WordPress REST API (safe-by-default).
-- Ghost — safe admin workflows for Ghost sites (dry-run → apply → verify).
+I built these around “real outcomes”, not just endpoints.
+So I group them by what you’re trying to do.
+
+Content and publishing:
+- WordPress: read and update posts, pages, and media through the WordPress REST API.
+- Ghost: safe admin workflows for Ghost sites.
 
 Assets:
-- Freepik — search and download assets (downloads require explicit apply).
-- Unsplash — search photos; optional download tracking (apply required).
+- Freepik: search and download assets. Downloads require explicit apply.
+- Unsplash: search photos. Download tracking requires apply.
 
 Analytics:
-- Plausible — read stats; write events only with explicit `--apply --yes`.
+- Plausible: read stats. Writing events requires explicit apply and confirmation.
 
 Ads + marketing data:
-- Google Ads — safe-by-default reads (and carefully gated writes where supported).
-- Meta Ads — read-only Marketing API access (GET-only).
+- Google Ads: safe-by-default reads and carefully gated changes where supported.
+- Meta Ads: read-only access.
 
 Infra + accounts:
-- Cloudflare — DNS, Zero Trust, Workers, WAF/rulesets, TLS, and more (writes require explicit apply).
-- Statuspage — read status + manage incidents/maintenance safely (gated writes).
-- Dynadot — registrar API workflows (domains, DNS, nameservers, transfers) with safety gates.
+- Cloudflare: DNS, Zero Trust, Workers, WAF rules, TLS, and more. Writes require explicit apply.
+- Statuspage: read status and manage incidents and maintenance with safety gates.
+- Dynadot: registrar workflows for domains, DNS, nameservers, and transfers with safety gates.
 
 Sales ops:
-- Instantly — campaigns/leads/webhooks + enrichment (destructive changes require a reviewed plan file).
+- Instantly: campaigns, leads, webhooks, enrichment. Destructive changes require a reviewed plan file.
 
 Money ops:
-- Mercury — safe-by-default reads and carefully gated workflows.
+- Mercury: safe-by-default reads and carefully gated workflows.
 
 Affiliate/product data:
-- Amazon PA-API v5 — product lookups (read-only).
+- Amazon PA-API v5: product lookups, read-only.
 
 Social:
-- Pinterest — read-only v1 (safe browsing of Pinterest data; no posting).
+- Pinterest: read-only browsing, no posting.
 
 Video:
-- YouTube — safe CLI patterns for YouTube-related workflows (where supported).
+- YouTube: safe CLI patterns for YouTube-related workflows where supported.
 
-## What members get (so it’s worth paying)
+## What members get
 
 Members repo: `Qwayk/qwayk-tools` (private)
 
