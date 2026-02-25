@@ -1,0 +1,9 @@
+# GitHub Sponsor button config template.
+#
+# Put this file at: `.github/FUNDING.yml` in the public front-door repo.
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
+#
+# Replace `Qwayk` with your sponsored org handle (or leave it blank until Sponsors is live).
+
+github: Qwayk
+
