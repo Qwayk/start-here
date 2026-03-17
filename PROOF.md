@@ -52,3 +52,6 @@ This isn’t:
 
 - Sponsors: `https://github.com/sponsors/Qwayk`
 - Public start here: `https://github.com/Qwayk/start-here`
+- Public demo tools:
+  - Amazon PA‑API v5 (read-only): https://github.com/Qwayk/amazon-pa-api-tool
+  - Plausible Analytics: https://github.com/Qwayk/plausible-api-tool
