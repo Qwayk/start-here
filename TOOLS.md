@@ -1,219 +1,211 @@
-Last updated: **2026-02-25**
+Last updated: **2026-03-17**
 
 # Tools catalog (Qwayk)
 
-This page is public so you can see what you’re paying for before you sponsor.
+You should be able to see what exists before you sponsor.
 
-My goal is simple: let AI agents do real work for you, without the “oops it changed the wrong thing” problem.
+These tools let an AI agent do real work through APIs, without the “it changed the wrong thing” problem.
 
-## How these tools work
+## Public demo tools (free)
 
-You run everything locally.
+These are public repos you can clone and test right now:
+- Amazon PA‑API v5 (read-only): https://github.com/Qwayk/amazon-pa-api-tool
+- Plausible Analytics: https://github.com/Qwayk/plausible-api-tool
 
-The tools don’t “take over your account”.
-They just call the same APIs you’d call manually, but with guardrails.
+## The safety loop (what makes this different)
 
-You’ll usually see this flow:
-1) Dry-run shows the plan
-2) Apply is a separate step
-3) The tool verifies what happened
-4) You get a receipt you can keep
+Every tool is built around the same loop:
 
-Two important notes:
-- Some tools are read-only. Some can do writes.
-- Anything that writes is gated. Dry-run first. Apply only when it looks right.
+1) The tool shows you a plan first.
+2) Nothing changes until you explicitly apply.
+3) The tool verifies what happened.
+4) You get a receipt you can keep.
 
-## Quick scan
+You run everything locally. You bring your own API keys. You do not paste secrets into GitHub.
 
-| Tool | Best for | Writes |
-|---|---|---|
-| WordPress | publishing and editing content | yes, gated |
-| Ghost | Ghost admin workflows | yes, gated |
-| Freepik | finding and downloading assets | downloads gated |
-| Unsplash | photo search | tracking gated |
-| Plausible Analytics | website analytics | events gated |
-| Google Ads | ads performance reads | depends |
-| Meta Ads | ads performance reads | no, read-only |
-| Cloudflare | DNS and zone changes | yes, gated |
-| Atlassian Statuspage | incidents and components | yes, gated |
-| Dynadot | domain inventory and registrar ops | yes, gated |
-| Instantly | campaigns and lead ops | yes, gated |
-| Mercury | money ops reads | depends |
-| Amazon Product Advertising API v5 | product lookups | no, read-only |
-| Pinterest | read-only data pulls | no, read-only |
-| YouTube | read-only data pulls | depends |
+## Tools (quick scan)
 
-## The lineup
+Each entry below has plain-English examples so you can quickly tell if it is useful.
 
-### WordPress
+### Amazon Product Advertising API v5 (read-only)
 
-Uses the WordPress REST API.
-
-Best for: publishing and editing content safely.
+Good for: product research workflows.
 
 Examples:
-- list posts/pages and find the exact one you want to touch
-- update a draft title/excerpt/SEO fields with a dry-run preview first
-- bulk operations with a small scope, then verify via read-back
+- Turn a list of Amazon URLs into ASINs and clean affiliate links.
+- Search for products and export a shortlist with prices and images.
 
-Writes: yes, but gated.
+Repo: https://github.com/Qwayk/amazon-pa-api-tool
 
-### Ghost
+### Plausible Analytics (Stats API and Events API)
 
-Uses the Ghost Admin API.
-
-Best for: Ghost site admin workflows without guessing.
+Good for: understanding what content and traffic is working, with optional event writes when you approve.
 
 Examples:
-- audit posts/pages and metadata
-- patch small copy changes safely
-- export, update, and verify what actually changed
+- Pull a weekly report of top pages, sources, and goals.
+- Send a test event only after you approve the plan.
 
-Writes: yes, but gated.
+Repo: https://github.com/Qwayk/plausible-api-tool
+
+### WordPress (REST API)
+
+Good for: publishing and editing content with preview-first changes.
+
+Examples:
+- Find the exact post or page you want to edit and preview the patch.
+- Apply a small set of metadata updates, then read-back verify.
+
+### Ghost (Admin API + Content API)
+
+Good for: content workflows for Ghost sites, including safe edits.
+
+Examples:
+- Audit posts and SEO fields and export a report.
+- Preview and apply small copy fixes with verification.
 
 ### Freepik
 
-Best for: finding assets fast, downloading only when you confirm.
+Good for: searching and downloading assets, where downloads only happen after you approve.
 
 Examples:
-- search for an image style and shortlist results
-- download only after a dry-run plan
-
-Writes: downloads are gated.
+- Search and shortlist image styles for a page or post.
+- Generate a download plan, then download only when you apply.
 
 ### Unsplash
 
-Best for: simple photo search workflows.
+Good for: photo search workflows, with gated download tracking.
 
 Examples:
-- find a set of photos by keywords and orientation
-- track downloads only when you explicitly apply
+- Search by keyword, orientation, and color and export a shortlist.
+- Track downloads only when you apply.
 
-Writes: download tracking is gated.
+### Google Ads API (read and write)
 
-### Plausible Analytics
-
-Best for: understanding what pages/content are actually working.
+Good for: pulling performance data and making changes safely when you choose to.
 
 Examples:
-- pull top pages for the last 7/30 days
-- check referrers and campaign tags
-- write events only when you explicitly apply and confirm
+- Export an analysis pack for a date range, then generate an offline optimization report.
+- Preview a campaign change plan, then apply only after review.
 
-Writes: events are gated.
+### Meta Ads API (read-only)
 
-### Google Ads
-
-Uses the Google Ads API.
-
-Best for: pulling performance data safely.
+Good for: visibility into Meta ad performance without posting or changing anything.
 
 Examples:
-- campaign performance by date range
-- ad group and keyword performance reads
+- Export campaign and ad set performance metrics for reporting.
+- Pull breakdowns by date range for analysis.
 
-Writes: depends on the command. Assume reads first.
+### Microsoft Ads API v13 (read and write)
 
-### Meta Ads
-
-Read-only access to the Meta Marketing API.
-
-Best for: read-only visibility into Meta ad performance.
+Good for: keyword research and account reporting, with apply-gated changes.
 
 Examples:
-- pull campaign/ad set/ad performance metrics
-- export data for reporting
+- Estimate keyword volume and suggested bids and export the results.
+- Preview bulk name edits from a spreadsheet, then apply with a receipt.
 
-Writes: no. Read-only.
+### Cloudflare API (read and write, heavily gated)
 
-### Cloudflare
-
-Best for: careful DNS and zone changes with guardrails.
+Good for: careful infrastructure changes with strict safety gates and file-only output for sensitive data.
 
 Examples:
-- audit DNS records before changing anything
-- apply a small DNS change, then read-back verify
-- review security/zero-trust settings before touching them
+- Audit DNS records and zones before changing anything.
+- Preview and apply a small change, then verify and write a receipt.
 
-Writes: yes, but gated.
+### Dynadot API3 (read and write)
 
-### Atlassian Statuspage
-
-Uses the Statuspage API.
-
-Best for: status and incident workflows that are explicit and auditable.
+Good for: domain inventory and careful bulk registrar operations.
 
 Examples:
-- read current incidents and component status
-- create or update an incident only after a dry-run plan
+- Export your domain inventory and audit nameservers across domains.
+- Plan a bulk nameserver update and apply only after review.
 
-Writes: yes, but gated.
+### Instantly API v2 (read and write, heavily gated)
 
-### Dynadot
-
-Uses Dynadot API3.
-
-Best for: domain inventory and careful bulk registrar changes.
+Good for: campaign and lead operations with a “review first” workflow.
 
 Examples:
-- export domain inventory
-- audit nameservers across many domains
-- bulk set nameservers with a plan + verification
+- Add leads in bulk with a dry-run preview before applying.
+- Preview an irreversible action plan, then apply using a reviewed plan file.
 
-Writes: yes, but gated.
+### Mercury API v1 (read-only)
 
-### Instantly
-
-Best for: campaign and lead ops with a “review the plan first” workflow.
+Good for: finance visibility and exports for bookkeeping.
 
 Examples:
-- add leads to a campaign from a CSV
-- run safe enrichment/search workflows
-- anything destructive requires a reviewed plan file
+- List accounts and transactions and export to a file.
+- Generate a simple snapshot report for a time range.
 
-Writes: yes, but gated.
+### Stripe API (read and write, money-moving gates)
 
-### Mercury
-
-Best for: money ops reads and careful workflows.
+Good for: billing and payment operations with “spend money” safety gates.
 
 Examples:
-- list accounts/transactions
-- generate exports for bookkeeping
+- Preview creating a product or price, then apply with verification.
+- Export invoices and subscriptions for reporting.
 
-Writes: depends on the command. Assume reads first.
+### Shopify Admin GraphQL API (read and write)
 
-### Amazon Product Advertising API v5
-
-Best for: product lookups and structured product data.
+Good for: e‑commerce operations like products, orders, customers, and discounts.
 
 Examples:
-- lookup products by ASIN
-- pull prices and attributes for a shortlist
+- Preview a product creation plan, then apply.
+- Export last 30 days of orders to a JSON file.
 
-Writes: no. Read-only.
+### Qdrant Cloud API (read and write)
 
-### Pinterest
-
-Read-only v1.
-
-Best for: reading Pinterest data without posting.
+Good for: managing vector database resources safely.
 
 Examples:
-- list boards and pins for analysis
-- export data for planning
+- List clusters and collections and export inventory.
+- Preview a change plan before applying.
 
-Writes: no. Read-only.
+### Zendesk Support API (read and write)
 
-### YouTube
-
-Best for: safe data pulls and workflow patterns where supported.
+Good for: ticketing workflows with plan-first changes.
 
 Examples:
-- fetch channel/video info for analysis
-- export data for reporting
+- Export tickets for analysis.
+- Preview bulk updates, then apply with a receipt.
 
-Writes: depends on the workflow. Assume reads first.
+### Pinterest API v1 (read-only)
+
+Good for: pulling Pinterest data without posting.
+
+Examples:
+- Export boards and pins for analysis.
+- Pull analytics and aggregate it for reporting.
+
+### Statuspage public API (read-only)
+
+Good for: simple “what is down right now” reporting from public status pages.
+
+Examples:
+- Fetch current incidents and component status.
+- Generate a daily status snapshot report.
+
+### YouTube Data API v3 (read and write, gated)
+
+Good for: channel and video workflows with explicit safety gates for live calls.
+
+Examples:
+- Export channel and video metadata for analysis.
+- Preview a write-like action plan, then apply only after review.
+
+### X API v2 (read and write, gated)
+
+Good for: safe social workflows where you want explicit “plan first” behavior.
+
+Examples:
+- Pull timelines or search results for analysis.
+- Preview a post or DM plan, then apply only when you approve.
+
+### Google Analytics (GA4), Google Search Console, and Google Tag Manager
+
+Good for: measurement and tracking work, with plan-first changes and extra gates for destructive actions.
+
+Examples:
+- Export reports and audits for a date range.
+- Preview tracking changes and apply only after review.
 
 ## What members get
 
@@ -229,13 +221,13 @@ Also:
 
 You don’t get:
 - custom setup
-- sharing your API keys with me
+- sharing your API keys with us
 - an SLA
 
 ## What’s next
 
 This list will keep growing.
 
-If there’s a specific API you want next, open an issue in the public repo and tell me:
+If there’s a specific API you want next, open an issue in the public repo and tell us:
 - what outcome you want
 - what the “safe dry-run plan” should look like
