@@ -1,10 +1,10 @@
-Last updated: **2026-02-25**
+Last updated: **2026-03-17**
 
 # Qwayk — safe-by-default API tools for AI agents
 
 If you want an AI agent to do real actions for you through APIs, but you don’t want it to “just do things” and break stuff, this is for you.
 
-I’m building a library of small tools that are designed for **safe automation**.
+This is a library of small tools designed for **safe automation**.
 
 ## The idea
 
@@ -25,8 +25,11 @@ Here’s the rule I follow:
 ## Proof and tools list
 
 Start here:
-- Proof/demo: `https://github.com/Qwayk/start-here/blob/main/PROOF.md`
+- Proof demo: `https://github.com/Qwayk/start-here/blob/main/PROOF.md`
 - Tool catalog: `TOOLS.md`
+- Public demo tools you can use right now:
+  - Amazon PA‑API v5 (read-only): https://github.com/Qwayk/amazon-pa-api-tool
+  - Plausible Analytics: https://github.com/Qwayk/plausible-api-tool
 
 If you’re thinking “ok but what am I paying for?” open `TOOLS.md` first.
 
@@ -43,9 +46,7 @@ Members repo includes:
 - workflow packs, the “do this outcome” playbooks
 - updates and early drops
 
-If you’re a vibe coder:
-- you can treat the workflow packs like “copy/paste recipes”.
-- run dry-run first, then apply only when it looks right.
+If you are not a developer, you can still use these tools. You run them locally, and the docs are written to be self-serve.
 
 ## Support boundary
 
