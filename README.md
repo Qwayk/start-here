@@ -1,62 +1,83 @@
-Last updated: **2026-03-17**
+Last updated: **2026-03-19**
 
-# Qwayk — safe-by-default API tools for AI agents
+# Qwayk — skills for AI agents, with safe tools underneath
 
-If you want an AI agent to do real actions for you through APIs, but you don’t want it to “just do things” and break stuff, this is for you.
+Qwayk helps AI agents do real work through real APIs.
 
-This is a library of small tools designed for **safe automation**.
+The top layer is the skill or workflow the agent uses.
+The layer underneath is the safe tool that keeps the work under control.
 
-## The idea
+That safety loop is the whole point:
+1) plan first
+2) approve before writes
+3) verify what changed
+4) keep a receipt
 
-Most “agent demos” skip the boring part: safety.
+## What this is
 
-Here’s the rule I follow:
-1) show you the plan first as a dry-run plan
-2) only do the write when you explicitly say apply
-3) verify what happened with read-back
-4) write a receipt so you can audit it later
+This is a GitHub-first library of skills and safe tools for agent work.
 
-## What you can do
+Use it if you want an agent to do useful jobs like:
+- publish or edit content
+- pull analytics and reporting data
+- manage infrastructure carefully
+- run repeatable API workflows without guessing
 
-- publish and update content safely (Ghost and WordPress)
-- pull marketing and analytics data without guessing (Plausible and Ads APIs)
-- manage infrastructure and vendor accounts carefully (Cloudflare, Statuspage, Dynadot)
+## Why Qwayk exists
 
-## Proof and tools list
+A lot of agent demos show the exciting part.
+Very few show the part that matters in real work:
+- how do you stop a bad write
+- how do you check what changed
+- how do you prove what happened later
+
+Qwayk is built around those questions.
+
+## Free proof you can inspect now
 
 Start here:
-- Proof demo: `https://github.com/Qwayk/start-here/blob/main/PROOF.md`
-- Tool catalog: `TOOLS.md`
-- Public demo tools you can use right now:
-  - Amazon PA‑API v5 (read-only): https://github.com/Qwayk/amazon-pa-api-tool
-  - Plausible Analytics: https://github.com/Qwayk/plausible-api-tool
+- Proof: `https://github.com/Qwayk/start-here/blob/main/PROOF.md`
+- Tools list: `https://github.com/Qwayk/start-here/blob/main/TOOLS.md`
 
-If you’re thinking “ok but what am I paying for?” open `TOOLS.md` first.
+Public demo repos:
+- Amazon PA-API v5: `https://github.com/Qwayk/amazon-pa-api-tool`
+- Plausible Analytics: `https://github.com/Qwayk/plausible-api-tool`
 
 ## Membership
 
-We sell membership via GitHub Sponsors:
-- Sponsors page: `https://github.com/sponsors/Qwayk`
-- Members get access to the private members repo: `Qwayk/qwayk-tools`
+Qwayk is funded through GitHub Sponsors:
+- `https://github.com/sponsors/Qwayk`
 
-If the Sponsors page isn’t live yet, we’re likely in the approval/onboarding flow.
+Members get access to the private tools library and update stream.
+That includes:
+- private repo access
+- onboarding docs that are actually usable
+- workflow packs for real jobs
+- earlier access to new tools
 
-Members repo includes:
-- onboarding that’s actually usable (`START_HERE.md`)
-- workflow packs, the “do this outcome” playbooks
-- updates and early drops
+## Who this is for
 
-If you are not a developer, you can still use these tools. You run them locally, and the docs are written to be self-serve.
+This is for people who want agents to do work for them in a safer way.
+That includes:
+- solo builders
+- vibe coders
+- small teams
+- agencies doing repeatable client work
+
+You do not need to be a deep API expert.
+But you do need to run things locally and bring your own API keys.
 
 ## Support boundary
 
-This is built to be self-serve:
-- No custom setup
-- No SLAs
-- Don’t paste secrets into Issues/Discussions
+This is self-serve by default.
+That means:
+- no custom setup
+- no SLA
+- no secrets in issues or discussions
 
-## Where to start
+## Best next step
 
-1) Read `PROOF.md`.
-2) Skim `TOOLS.md` (it tells you what exists and what’s coming).
-3) If it matches what you want, sponsor and accept the GitHub invite.
+1) Read `PROOF.md`
+2) Skim `TOOLS.md`
+3) Try a public demo repo
+4) If it fits what you want, sponsor Qwayk

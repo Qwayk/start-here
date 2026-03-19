@@ -1,57 +1,58 @@
-Last updated: **2026-02-25**
+Last updated: **2026-03-19**
 
-# Proof — what “safe-by-default” means here
+# Proof — how Qwayk keeps agent work safer
 
-Ok so… a lot of agent stuff online is “look, it did the thing”.
+A lot of people now want AI agents to do real work.
+That part makes sense.
 
-That’s cool, but it’s also how you end up with:
-- the wrong DNS record
-- a deleted campaign
-- a broken post/page
-- a mess you can’t undo
+The hard part is safety.
 
-So I built everything around one rule:
-**you see the plan first, and nothing writes unless you explicitly apply.**
+If an agent can touch real APIs, one bad action can mean:
+- the wrong page gets changed
+- the wrong record gets updated
+- the wrong setting gets pushed live
+- nobody can prove what happened after
 
-## The safety flow
+Qwayk is built to reduce that risk.
 
-1) **Dry-run**: the tool prints a plan of what it *would* do.
-2) **You review**: if the plan looks wrong, you stop.
-3) **Apply**: you run the same command with `--apply` (and sometimes `--yes`).
-4) **Verify**: the tool reads back the API and confirms the new state.
-5) **Receipt**: you get a small artifact you can save for auditing.
+## The simple rule
 
-## A tiny example
+Skills tell the agent what to do.
+Qwayk tools make sure the work goes through safety gates.
 
-Dry-run might say:
-- “I’m going to update `example.com` DNS A record from `1.2.3.4` to `5.6.7.8`.”
+That means:
+1) plan first
+2) apply only when you approve
+3) verify the result
+4) keep a receipt
 
-Apply is explicit:
-- same command + `--apply`
+## What that looks like in practice
 
-Verify might say:
-- “Read-back confirms A record is now `5.6.7.8`.”
+A safe run should answer four questions clearly:
+- what is going to change
+- what will not change yet
+- what happened after apply
+- what proof do I have now
 
-Receipt might include:
-- timestamp
-- what you changed
-- what was verified
+If a tool cannot answer those questions clearly, it is not good enough.
 
-## What this is / isn’t
+## What this is not
 
-This is:
-- tools + workflow packs for safe automation through APIs
-- self-serve by default
+This is not:
+- blind automation
+- a bot that holds your secrets for you
+- "just trust the agent"
 
-This isn’t:
-- a bot that holds your credentials
-- a done-for-you service
-- “trust me bro” automation
+## Public proof repos
 
-## Get access
+Start with these:
+- Amazon PA-API v5: `https://github.com/Qwayk/amazon-pa-api-tool`
+- Plausible Analytics: `https://github.com/Qwayk/plausible-api-tool`
 
-- Sponsors: `https://github.com/sponsors/Qwayk`
-- Public start here: `https://github.com/Qwayk/start-here`
-- Public demo tools:
-  - Amazon PA‑API v5 (read-only): https://github.com/Qwayk/amazon-pa-api-tool
-  - Plausible Analytics: https://github.com/Qwayk/plausible-api-tool
+And the front door:
+- `https://github.com/Qwayk/start-here`
+
+## If you want the full library
+
+Support Qwayk here:
+- `https://github.com/sponsors/Qwayk`
